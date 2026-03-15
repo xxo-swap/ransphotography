@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #385982;
+  --color-accent: #c5a358;
+  --color-dark: #0a0a0a;
+
+  --font-display: var(--font-cormorant);
+  --font-title: var(--font-playfair);
+  --font-body: var(--font-montserrat);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-dark);
+    color: white;
+    font-family: var(--font-montserrat);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background-color: var(--color-primary);
+    color: white;
+  }
+}
