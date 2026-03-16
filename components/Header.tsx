@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <nav className="fixed top-0 w-full z-50 p-8 flex justify-between items-center bg-dark/20 backdrop-blur-sm border-b border-white/5">
       <Link href="/" className="group flex flex-col leading-none">
-        <Image src="/logo.jpg" alt="Logo" width={95} height={40} />
+        <Image className="" src="/logo.png" alt="Logo" width={95} height={40} />
         {/* <span className="font-title text-2xl tracking-[0.2em] text-white">
           {SITE_IDENTITY.firstName}
         </span>

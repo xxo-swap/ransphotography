@@ -67,7 +67,7 @@ export default function HomePortfolio() {
       {/* Floating Preview Card */}
       {activeProject && (
         <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center">
-          <div className="relative w-[520px] h-[320px] rounded-sm overflow-hidden shadow-2xl border border-white/10 animate-fade-in">
+          <div className="relative w-[420px] h-[650px] rounded-sm overflow-hidden shadow-2xl border border-white/10 animate-fade-in">
             <Image
               src={activeProject.coverImage}
               alt={activeProject.couple}

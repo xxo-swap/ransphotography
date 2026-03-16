@@ -35,6 +35,8 @@ export default function BookingPage() {
             <p className="font-body text-[10px] uppercase tracking-[0.3em] text-primary">Direct Contact</p>
             <p className="font-title text-xl text-white/80">{CONTACT_INFO.email}</p>
             <p className="font-title text-xl text-white/80">{CONTACT_INFO.phone}</p>
+            <p className="font-title text-xl text-white/80">{CONTACT_INFO.primaryAddress}</p>
+            <p className="font-title text-xl text-white/80">{CONTACT_INFO.secondaryAddress}</p>
           </div>
         </div>
 

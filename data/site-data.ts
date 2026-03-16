@@ -10,6 +10,8 @@ export const NAV_LINKS = [
   { name: "Photography", href: "/photography" },
   { name: "Our Process", href: "/process" },
   { name: "Contact", href: "/contact" },
+  { name: "About", href: "/about" },
+
 ];
 
 export const HERO_SLIDES = [
@@ -95,10 +97,11 @@ export const PROCESS_STEPS = [
 ];
 
 export const CONTACT_INFO = {
-  email: "hello@ransphotography.com",
+  email: "ransphotography94@gmail.com",
   phone: "+91 7037219198",
   location: "Mathura, India",
   instagram: "@_deepak_studio",
+  primaryAddress : "Govardhan, Barsana Road Near by Chandra Garden [Mathura]",
 };
 
 export const PHILOSOPHY = {
@@ -122,4 +125,21 @@ export const TESTIMONIAL = {
     "Rans didn't just record our wedding; they captured the invisible threads of emotion that we were too overwhelmed to notice. Watching our film felt like reliving the soul of the day.",
   client: "Ananya & Kabir",
   location: "Udaipur",
+};
+
+export const FOUNDER_DATA = {
+  name: "Deepak Singh",
+  title: "Photgrapher",
+  image: "/founder.jpeg", // Placeholder headshot
+  signature: "/signature.png", // Path to a transparent signature graphic
+  bio: [
+    {
+      heading: "The Genesis",
+      text: "With over a decade of experience as a Lead Photgrapher , I found a disconnect between the technical and the emotional. Wedding videography was often treated as a set of rules—a directed performance. I wanted to capture the silence, the nervous energy, and the quiet glances that defined the day, not the choreographed spins."
+    },
+    {
+      heading: "The Rans Ethos",
+      text: "Rans Photography was born from a need to archive human emotion, untethered by direction. My background in software demands precision, while my heart for editing demands rhythm. Together, they create films that aren't just seen, but felt."
+    }
+  ]
 };
