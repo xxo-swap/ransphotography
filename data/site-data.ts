@@ -102,6 +102,7 @@ export const CONTACT_INFO = {
   location: "Mathura, India",
   instagram: "@_deepak_studio",
   primaryAddress : "Govardhan, Barsana Road Near by Chandra Garden [Mathura]",
+  secondaryAddress : "Mathura, Uttar Pradesh, India",
 };
 
 export const PHILOSOPHY = {
