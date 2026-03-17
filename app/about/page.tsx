@@ -64,7 +64,6 @@ export default function FounderAboutPage() {
       ref={containerRef} 
       className="bg-[var(--color-dark)] text-white overflow-x-hidden relative w-full"
     >
-      
       {/* 1. HERO SECTION */}
       <section className="relative h-screen flex flex-col justify-center px-6 md:px-24 overflow-hidden border-b border-white/[0.03]">
         <div className="z-10 relative">
@@ -84,7 +83,7 @@ export default function FounderAboutPage() {
 
       {/* 2. IMAGE SECTION: Floating Portrait */}
       <section className="portrait-container relative py-32 md:py-48 px-6 md:px-24 flex justify-end">
-        <div className="relative w-full md:w-5/12 aspect-[4/5] overflow-hidden border border-white/10 shadow-2xl z-10 portrait-parallax">
+        <div className="absolute top-[-300px] w-full md:w-5/12 aspect-[5/5] overflow-hidden border border-white/10 shadow-2xl z-10 portrait-parallax">
           <Image
             src={FOUNDER_DATA.image}
             alt={FOUNDER_DATA.name}
