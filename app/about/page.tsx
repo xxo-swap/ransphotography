@@ -126,7 +126,7 @@ export default function FounderAboutPage() {
       <section className="py-48 md:py-64 flex flex-col items-center justify-center text-center space-y-16 reveal-block relative overflow-hidden">
         
         {/* Animated Background Ring */}
-        <div className="absolute w-[600px] h-[600px] border border-white/[0.02] rounded-full pointer-events-none" />
+        <div className="absolute w-[600px] h-[600px] border border-white/[.25] rounded-full pointer-events-none" />
 
         <div className="relative group">
           {FOUNDER_DATA.signature && (
@@ -141,7 +141,7 @@ export default function FounderAboutPage() {
             </div>
           )}
           {/* Rotating Stamp Border */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 border border-[var(--color-primary)]/10 rounded-full animate-[spin_30s_linear_infinite] border-dashed" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 border border-[var(--color-primary)]/100 rounded-full animate-[spin_50s_linear_infinite] border-dashed" />
         </div>
         
         <div className="space-y-8 z-10">
