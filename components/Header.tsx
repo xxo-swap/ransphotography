@@ -14,7 +14,7 @@ export default function Header() {
     <nav className="fixed top-0 w-full z-50 px-6 md:px-10 py-6 flex justify-between items-center bg-dark/20 backdrop-blur-sm border-b border-white/5">
       {/* Logo */}
       <Link href="/" className="flex items-center">
-        <Image src="/logo.png" alt="Logo" width={95} height={40} />
+        <Image src="/logo.jpg" alt="Logo" width={95} height={40} />
       </Link>
 
       {/* Desktop Menu */}
