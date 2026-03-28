@@ -82,16 +82,16 @@ export default function FounderAboutPage() {
       {/* PORTRAIT */}
       <section className="portrait-container relative px-6 md:px-16 lg:px-24 py-24 md:py-40 flex flex-col md:flex-row md:justify-end gap-16">
         {/* Image */}
-        <div className="w-full md:w-5/12 aspect-square overflow-hidden border border-white/10 shadow-2xl portrait-parallax">
-          <Image
-            src={FOUNDER_DATA.image}
-            alt={FOUNDER_DATA.name}
-            fill
-            className="object-cover   transition-all duration-1000 scale-110"
-            sizes="(max-width: 768px) 100vw, 40vw"
-            priority
-          />
-        </div>
+        <div className="relative w-full md:w-5/12 aspect-square overflow-hidden border border-white/10 shadow-2xl portrait-parallax">
+  <Image
+    src={FOUNDER_DATA.image}
+    alt={FOUNDER_DATA.name}
+    fill
+    className="object-cover transition-all duration-1000 scale-110"
+    sizes="(max-width: 768px) 100vw, 40vw"
+    priority
+  />
+</div>
 
         {/* Quote */}
         <div className="max-w-lg reveal-block md:absolute md:left-16 md:bottom-24">
