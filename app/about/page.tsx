@@ -4,6 +4,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FOUNDER_DATA } from "@/data/site-data";
+import HomePortfolio from "@/components/HomePortfolio";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -14,7 +15,6 @@ export default function FounderAboutPage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Parallax effect for the large portrait
       gsap.to(".portrait-parallax", {
         yPercent: 15,
         ease: "none",
@@ -26,9 +26,8 @@ export default function FounderAboutPage() {
         },
       });
 
-      // 2. Fade in text blocks as they enter the screen
-      const revealBlocks = gsap.utils.toArray(".reveal-block");
-      revealBlocks.forEach((block: any) => {
+      const revealBlocks = gsap.utils.toArray<HTMLElement>(".reveal-block");
+      revealBlocks.forEach((block) => {
         gsap.fromTo(
           block,
           { opacity: 0, y: 40 },
@@ -40,13 +39,11 @@ export default function FounderAboutPage() {
             scrollTrigger: {
               trigger: block,
               start: "top 90%",
-              toggleActions: "play none none none",
             },
           }
         );
       });
 
-      // 3. Hero Text Entrance
       gsap.from(".hero-text", {
         opacity: 0,
         x: -50,
@@ -60,59 +57,68 @@ export default function FounderAboutPage() {
   }, []);
 
   return (
-    <main 
-      ref={containerRef} 
-      className="bg-[var(--color-dark)] text-white overflow-x-hidden relative w-full"
+    <main
+      ref={containerRef}
+      className="bg-[var(--color-dark)] text-white overflow-x-hidden w-full"
     >
-      {/* 1. HERO SECTION */}
-      <section className="relative h-screen flex flex-col justify-center px-6 md:px-24 overflow-hidden border-b border-white/[0.03]">
-        <div className="z-10 relative">
-          <span className="hero-text font-body text-[10px] uppercase tracking-[1.2em] text-[var(--color-primary)] block mb-6">
+      {/* HERO */}
+      <section className="relative min-h-[80vh] flex flex-col justify-center px-6 md:px-16 lg:px-24  border-b border-white/[0.03]">
+        <div className="z-10">
+          <span className="hero-text font-body text-[10px] uppercase tracking-[1em] text-[var(--color-primary)] block mb-6">
             The Archivist
           </span>
-          <h1 className="hero-text font-display text-[15vw] md:text-[11vw] italic leading-[0.9] tracking-tighter opacity-90">
+          <h1 className="hero-text font-display text-[18vw] sm:text-[14vw] md:text-[10vw] italic leading-[0.9] tracking-tighter opacity-90">
             Deepak <br /> Singh.
           </h1>
         </div>
-        
-        {/* Background Ghost Text - Positioned carefully to prevent overflow */}
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 font-display text-[28vw] italic text-white/[0.02] pointer-events-none select-none uppercase leading-none z-0 overflow-hidden translate-x-1/4">
-          Vision
+
+        <div className="absolute inset-0 flex items-center justify-end pointer-events-none select-none">
+          <div className="font-display text-[30vw] md:text-[22vw] italic text-white/[0.02] uppercase leading-none pr-10">
+            Vision
+          </div>
         </div>
       </section>
 
-      {/* 2. IMAGE SECTION: Floating Portrait */}
-      <section className="portrait-container relative py-32 md:py-48 px-6 md:px-24 flex justify-end">
-        <div className="absolute top-[-300px] w-full md:w-5/12 aspect-[5/5] overflow-hidden border border-white/10 shadow-2xl z-10 portrait-parallax">
+      {/* PORTRAIT */}
+      <section className="portrait-container relative px-6 md:px-16 lg:px-24 py-24 md:py-40 flex flex-col md:flex-row md:justify-end gap-16">
+        {/* Image */}
+        <div className="w-full md:w-5/12 aspect-square overflow-hidden border border-white/10 shadow-2xl portrait-parallax">
           <Image
             src={FOUNDER_DATA.image}
             alt={FOUNDER_DATA.name}
             fill
-            className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-110"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover   transition-all duration-1000 scale-110"
+            sizes="(max-width: 768px) 100vw, 40vw"
             priority
           />
         </div>
-        
-        {/* Overlapping Narrative */}
-        <div className="absolute left-6 md:left-24 bottom-10 md:bottom-32 z-20 max-w-lg reveal-block">
-          <p className="font-title text-3xl md:text-5xl italic leading-tight text-white/90">
-            &ldquo;I observe the <span className="text-[var(--color-primary)]">unspoken</span> rhythm of the day.&rdquo;
+
+        {/* Quote */}
+        <div className="max-w-lg reveal-block md:absolute md:left-16 md:bottom-24">
+          <p className="font-title text-2xl md:text-5xl italic leading-tight text-white/90">
+            &ldquo;I observe the{" "}
+            <span className="text-[var(--color-primary)]">unspoken</span> rhythm of the day.&rdquo;
           </p>
         </div>
       </section>
 
-      {/* 3. NARRATIVE SECTION: Staggered Blocks */}
-      <section className="py-24 md:py-40 space-y-48 md:space-y-72 px-6 md:px-24 max-w-7xl mx-auto w-full">
+      {/* NARRATIVE */}
+      <section className="px-6 md:px-16 lg:px-24 py-24 md:py-40 max-w-7xl mx-auto space-y-32 md:space-y-56">
         {FOUNDER_DATA.bio.map((section, index) => (
-          <div 
-            key={index} 
-            className={`flex flex-col ${index % 2 === 0 ? "md:items-start" : "md:items-end"} reveal-block`}
+          <div
+            key={index}
+            className={`flex flex-col ${
+              index % 2 === 0 ? "md:items-start" : "md:items-end"
+            } reveal-block`}
           >
             <div className="max-w-xl space-y-8">
               <div className="flex items-baseline gap-4 border-b border-white/5 pb-6">
-                <span className="font-display text-4xl md:text-6xl italic text-[var(--color-accent)] opacity-10">0{index + 1}</span>
-                <h2 className="font-title text-3xl md:text-4xl uppercase tracking-tighter text-white/80">{section.heading}</h2>
+                <span className="font-display text-4xl md:text-6xl italic text-[var(--color-accent)] opacity-10">
+                  0{index + 1}
+                </span>
+                <h2 className="font-title text-2xl md:text-4xl uppercase tracking-tighter text-white/80">
+                  {section.heading}
+                </h2>
               </div>
               <p className="font-body text-white/40 text-xs md:text-sm leading-relaxed tracking-widest uppercase font-light">
                 {section.text}
@@ -122,35 +128,30 @@ export default function FounderAboutPage() {
         ))}
       </section>
 
-      {/* 4. SIGNATURE SECTION: The Seal */}
-      <section className="py-48 md:py-64 flex flex-col items-center justify-center text-center space-y-16 reveal-block relative overflow-hidden">
-        
-        {/* Animated Background Ring */}
-        <div className="absolute w-[600px] h-[600px] border border-white/[.25] rounded-full pointer-events-none" />
+      {/* SIGNATURE */}
+      <section className="py-32 md:py-56 flex flex-col items-center justify-center text-center space-y-16 reveal-block relative overflow-hidden px-6">
+        <div className="absolute w-[400px] md:w-[600px] h-[400px] md:h-[600px] border border-white/[.25] rounded-full pointer-events-none" />
 
         <div className="relative group">
           {FOUNDER_DATA.signature && (
-            <div className="relative z-10 p-4">
-              <Image
-                src={FOUNDER_DATA.signature}
-                alt="Signature Seal"
-                width={350}
-                height={175}
-                className="opacity-70 brightness-150 filter invert group-hover:opacity-100 transition-opacity duration-700"
-              />
-            </div>
+            <Image
+              src={FOUNDER_DATA.signature}
+              alt="Signature Seal"
+              width={300}
+              height={150}
+              className="opacity-70 brightness-150 invert group-hover:opacity-100 transition-opacity duration-700"
+            />
           )}
-          {/* Rotating Stamp Border */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 border border-[var(--color-primary)]/100 rounded-full animate-[spin_50s_linear_infinite] border-dashed" />
+          <div className="absolute inset-0 m-auto w-56 h-56 md:w-80 md:h-80 border border-[var(--color-primary)] rounded-full animate-[spin_50s_linear_infinite] border-dashed" />
         </div>
-        
+
         <div className="space-y-8 z-10">
-          <p className="font-body text-[10px] uppercase tracking-[0.8em] text-white/30 px-6">
+          <p className="font-body text-[10px] uppercase tracking-[0.8em] text-white/30">
             Crafting visual legacies from Noida to Worldwide
           </p>
-          <a 
-            href="/contact" 
-            className="group relative font-display text-4xl md:text-5xl italic text-white/90 hover:text-[var(--color-primary)] transition-colors inline-block"
+          <a
+            href="/contact"
+            className="group font-display text-3xl md:text-5xl italic text-white/90 hover:text-[var(--color-primary)] transition-colors inline-block"
           >
             Let&apos;s tell your story.
             <div className="h-[1px] bg-[var(--color-primary)] w-0 group-hover:w-full transition-all duration-700 mt-4 mx-auto" />
@@ -158,6 +159,8 @@ export default function FounderAboutPage() {
         </div>
       </section>
 
+      <HomePortfolio/>
+      
     </main>
   );
 }
