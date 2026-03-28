@@ -131,8 +131,8 @@ export const TESTIMONIAL = {
 export const FOUNDER_DATA = {
   name: "Deepak Singh",
   title: "Photgrapher",
-  image: "/founder.jpeg", // Placeholder headshot
-  signature: "/signature.png", // Path to a transparent signature graphic
+  image: "/founder.jpg", // Placeholder headshot
+  signature: "/signature.webp", // Path to a transparent signature graphic
   bio: [
     {
       heading: "The Genesis",
