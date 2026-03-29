@@ -65,14 +65,14 @@ export const CLIENT_PROJECTS: ClientProject[] = [
   {
     slug: "princy-rajat",
     couple: "Princy & Rajat",
-    location: "Jaipur, Rajasthan",
+    location: "Govardhan, Uttar Pradesh",
     date: "February 2025",
     coverImage: "/clients/princyRajat/cover.jpeg",
     summary:
       "A vibrant palace wedding filled with royal colors, music, and timeless romance.",
     videoUrl: "https://www.youtube.com/watch?v=raJnOuGlcd4",
     videoPreview: "https://www.youtube.com/watch?v=raJnOuGlcd4",
-    filmCategory: "Feature Film",
+    filmCategory: "Cinematic Teaser",
     duration: "5:20",
     events: [
       {
