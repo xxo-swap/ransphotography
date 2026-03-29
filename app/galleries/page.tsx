@@ -32,7 +32,7 @@ export default function AllGalleriesPage() {
           All Stories
         </h1>
         <p className="font-body text-white/30 text-[11px] uppercase tracking-widest max-w-md mx-auto leading-relaxed">
-          A collection of cinematic moments and timeless legacies captured across the globe.
+          A collection of cinematic moments and timeless stills.
         </p>
       </header>
 
