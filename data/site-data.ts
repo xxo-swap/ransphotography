@@ -140,7 +140,7 @@ export const FOUNDER_DATA = {
     },
     {
       heading: "The Rans Ethos",
-      text: "Rans Photography was born from a need to archive human emotion, untethered by direction. My background in software demands precision, while my heart for editing demands rhythm. Together, they create films that aren't just seen, but felt."
+      text: "I don't direct. I observe. Every couple has their own rhythm, their own quiet moments. After 10+ years behind the lens, I've learned that the best frames aren't posed — they're felt. I listen to what you truly want, then step back and let the real story unfold. Based in Govardhan. No fake moments. Just honest work."
     }
   ]
 };
