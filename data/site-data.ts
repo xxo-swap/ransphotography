@@ -136,7 +136,7 @@ export const FOUNDER_DATA = {
   bio: [
     {
       heading: "The Genesis",
-      text: "With over a decade of experience as a Lead Photgrapher , I found a disconnect between the technical and the emotional. Wedding videography was often treated as a set of rules—a directed performance. I wanted to capture the silence, the nervous energy, and the quiet glances that defined the day, not the choreographed spins."
+      text: "Hi, I'm a Govardhan-based photographer with over a decade of experience. I don't direct my couples — I understand their vision and capture what feels real to them. "
     },
     {
       heading: "The Rans Ethos",
